@@ -10,10 +10,16 @@
     <h1>Weather Forecast</h1>
     <h2>Home Page</h2>
     <hr>
+    <form action="" method="POST">
+        {% csrf_token %}
+        {{ form }}
+        <button type="submit">Add</button>
+    </form>
     <hr>
-    
+
     {% for i in city_data %}
         {{i.city}}<br>
+        <img src="http://openweathermap.org/img/w/{{ i.icon }}.png" alt="icon"><br>
         {{i.temperature}}<br>
         {{i.description}}<hr>
     {% endfor %}
