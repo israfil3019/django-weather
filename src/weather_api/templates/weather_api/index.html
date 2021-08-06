@@ -10,6 +10,12 @@
     <h1>Weather Forecast</h1>
     <h2>Home Page</h2>
     <hr>
+    {% if messages %}
+    {% for message in messages %}
+    {{ message }}
+    {% endfor %}
+    {% endif %}
+    <hr>
     <form action="" method="POST">
         {% csrf_token %}
         {{ form }}
